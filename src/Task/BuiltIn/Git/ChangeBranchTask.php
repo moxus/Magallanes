@@ -56,10 +56,11 @@ class ChangeBranchTask extends AbstractTask
                 return false;
             }
 
-            foreach (explode(PHP_EOL, $process->getOutput()) as $branch) {
+            foreach (explode("\n", $process->getOutput()) as $branch) {
                 $branch = trim($branch);
                 if (strpos($branch, '*') === 0) {
                     $currentBranch = str_replace('* ', '', $branch);
+                    break;
                 }
             }
             if(!isset($currentBranch)) {
