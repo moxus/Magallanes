@@ -11,6 +11,10 @@
       "email": "andresmontanez@gmail.com"
     },
     {
+      "name": "Fritz Michael Gschwantner",
+      "email": "fmg@inspiredminds.at"
+    },
+    {
       "name": "Christian Sagmüller",
       "email": "christian.sagmueller@gmail.com"
     }
@@ -42,7 +46,6 @@
   "extra": {
     "branch-alias": {
       "dev-master": "4.0.x-dev",
-      "dev-discovery-one": "4.x-dev"
     }
   }
 }
