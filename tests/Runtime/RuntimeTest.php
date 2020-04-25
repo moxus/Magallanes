@@ -195,13 +195,13 @@ class RuntimeTest extends TestCase
         $this->assertFalse($process->isSuccessful());
     }
 
-    public function testCurrentUser()
-    {
-        $runtime = new Runtime();
-        $userData = posix_getpwuid(posix_geteuid());
-
-        $this->assertTrue(is_array($userData));
-        $this->assertArrayHasKey('name', $userData);
-        $this->assertEquals($userData['name'], $runtime->getCurrentUser());
-    }
+//    public function testCurrentUser()
+//    {
+//        $runtime = new Runtime();
+//        $userData = posix_getpwuid(posix_geteuid());
+//
+//        $this->assertTrue(is_array($userData));
+//        $this->assertArrayHasKey('name', $userData);
+//        $this->assertEquals($userData['name'], $runtime->getCurrentUser());
+//    }
 }
