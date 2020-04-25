@@ -69,7 +69,7 @@ class DeployCommandMiscTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -107,7 +107,7 @@ class DeployCommandMiscTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout maintenance',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -178,7 +178,7 @@ class DeployCommandMiscTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -217,7 +217,7 @@ class DeployCommandMiscTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -252,7 +252,7 @@ class DeployCommandMiscTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git pull',
             2 => 'composer install --optimize-autoloader',
             3 => 'composer dump-autoload --optimize',
@@ -260,7 +260,7 @@ class DeployCommandMiscTest extends TestCase
             5 => 'ssh -p 22 -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no tester@testhost "cd /var/www/test && bin/console cache:warmup --env=dev"',
             6 => 'ssh -p 22 -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no tester@testhost "cd /var/www/test && bin/console assets:install web --env=dev --symlink --relative"',
             7 => 'ssh -p 22 -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no tester@testhost "cd /var/www/test && bin/console cache:pool:prune --env=dev"',
-            8 => 'git branch | grep "*"',
+            8 => 'git branch',
         );
 
         // Check total of Executed Commands

@@ -70,8 +70,8 @@ class ProcessMockup extends Process
 
     public function getOutput()
     {
-        if ($this->commandline == 'git branch | grep "*"') {
-            return '* master';
+        if ($this->commandline == 'git branch') {
+            return '  other' . PHP_EOL . '* master' . PHP_EOL . '  next';
         }
 
         // Make composer build 20 days old

@@ -38,21 +38,34 @@ class ChangeBranchTask extends AbstractTask
         return sprintf('[Git] Change Branch (%s)', $branch);
     }
 
+    /**
+     * @return bool
+     * @throws SkipException
+     */
     public function execute()
     {
         $options = $this->getOptions();
         $branch = $this->runtime->getVar('git_revert_branch', false);
 
         if ($branch === false) {
-            $cmdGetCurrent = sprintf('%s branch | grep "*"', $options['path']);
+//            $cmdGetCurrent = sprintf('%s branch | grep "*"', $options['path']);
+            $cmdGetCurrent = sprintf('%s branch', $options['path']);
 
-            /** @var Process $process */
             $process = $this->runtime->runLocalCommand($cmdGetCurrent);
             if (!$process->isSuccessful()) {
                 return false;
             }
 
-            $currentBranch = str_replace('* ', '', trim($process->getOutput()));
+            foreach (explode(PHP_EOL, $process->getOutput()) as $branch) {
+                $branch = trim($branch);
+                if (strpos($branch, '*') === 0) {
+                    $currentBranch = str_replace('* ', '', $branch);
+                }
+            }
+            if(!isset($currentBranch)) {
+                return false;
+            }
+
             if ($currentBranch == $options['branch']) {
                 throw new SkipException();
             }
@@ -63,7 +76,6 @@ class ChangeBranchTask extends AbstractTask
 
         $cmdChange = sprintf('%s checkout %s', $options['path'], $branch);
 
-        /** @var Process $process */
         $process = $this->runtime->runLocalCommand($cmdChange);
         return $process->isSuccessful();
     }

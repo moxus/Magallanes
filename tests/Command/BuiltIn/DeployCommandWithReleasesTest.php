@@ -34,7 +34,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -84,7 +84,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -134,7 +134,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -261,7 +261,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -303,7 +303,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -344,7 +344,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',
@@ -397,7 +397,7 @@ class DeployCommandWithReleasesTest extends TestCase
         $ranCommands = $application->getRuntime()->getRanCommands();
 
         $testCase = array(
-            0 => 'git branch | grep "*"',
+            0 => 'git branch',
             1 => 'git checkout test',
             2 => 'git pull',
             3 => 'composer install --optimize-autoloader',

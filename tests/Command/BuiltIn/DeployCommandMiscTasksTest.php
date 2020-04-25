@@ -167,7 +167,7 @@ class DeployCommandMiscTasksTest extends TestCase
 
         $tester = new CommandTester($command);
 
-        $application->getRuntime()->forceFail('git branch | grep "*"');
+        $application->getRuntime()->forceFail('git branch');
 
         $tester->execute(['command' => $command->getName(), 'environment' => 'test']);
 
